@@ -23,31 +23,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      
+
+      <tr *ngFor = "let categoria of dados">
         <th scope="row"><a href="#">1   </a></th>
-        <td>Madeira</td>
+        <td>{{categoria.descricao}}</td>
         <td><a href="#" class="text-primary"><i class="bi bi-pencil-square"></i></a></td>
         <td><a href="#" class="bi bi-trash-fill"></a></td>
-      </tr>
-      <tr>
-        <th scope="row"><a href="#">2</a></th>
-        <td>Plástico</td>
-        <td><a href="#" class="text-primary"><i class="bi bi-pencil-square"></i></a></td>
-        <td><a href="#" class="bi bi-trash-fill"></a></td>
-      </tr>
-      <tr>
-        <th scope="row"><a href="#">3</a></th>
-        <td>Epoxi</td>
-        <td><a href="#" class="text-primary"><i class="bi bi-pencil-square"></i></a></td>
-        <td><a href="#" class="bi bi-trash-fill"></a></td>
-      </tr>
-      <tr>
-        <th scope="row"><a href="#">4</a></th>
-        <td>Metal</td>
-        <td><a href="#" class="text-primar"><i class="bi bi-pencil-square"></i></a></td>
-        <td><a href="#" class="bi bi-trash-fill"></a></td>
-      </tr>
-      <tr>
       </tr>
     </tbody>
   </table>
