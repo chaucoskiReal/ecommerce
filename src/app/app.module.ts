@@ -1,29 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
-import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
-import {AngularFireModule} from '@angular/fire/compat';
-import {AngularFireStorageModule} from '@angular/fire/compat/storage';
 import { FormsModule } from '@angular/forms';
 import { FormaPagamentoComponent } from './forma-pagamento/forma-pagamento.component';
 import { FormaPagamentoListarComponent } from './forma-pagamento/forma-pagamento-listar/forma-pagamento-listar.component';
 import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-form/forma-pagamento-form.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    MenuComponent,
     HeaderComponent,
+    MenuComponent,
     HomeComponent,
     CategoriaComponent,
     CategoriaListarComponent,
@@ -36,13 +35,13 @@ import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-f
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyBGttBoUlwHj9Brflxeff_81S4saSIctqo",
-      authDomain: "ecommerce-763be.firebaseapp.com",
-      projectId: "ecommerce-763be",
-      storageBucket: "ecommerce-763be.appspot.com",
-      messagingSenderId: "439928223715",
-      appId: "1:439928223715:web:c0565176ccbd3a491792d6",
-      measurementId: "G-0D6FHG4B87"
+      apiKey: "AIzaSyDZ3EGVhjEUIrEOKC16LoEriQQnwlYqm-4",
+      authDomain: "ecommerce-e2cb8.firebaseapp.com",
+      projectId: "ecommerce-e2cb8",
+      storageBucket: "ecommerce-e2cb8.appspot.com",
+      messagingSenderId: "808945267804",
+      appId: "1:808945267804:web:c7e04cb8fb63349287e299",
+      measurementId: "G-Y43H7BZZWX"
     }),
     AngularFireStorageModule,
     FormsModule

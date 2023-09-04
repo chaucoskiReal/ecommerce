@@ -10,15 +10,15 @@ export class CategoriaService {
     public firebase_service:FirebaseService
   ) { }
 
-  ref(){
+  ref () {
     return this.firebase_service.ref().child('/categoria');
   }
 
-  salvar(dados:any){
+  salvar(dados:any) {
     this.ref().push(dados).then();
   }
 
-  listar(){
+  listar() {
     return this.ref();
   }
 
@@ -31,8 +31,8 @@ export class CategoriaService {
   }
 
   editar(indice:string,dados:any){
-    this.ref().child('/' + indice ).update(dados).then();
-
+    this.ref().child('/' + indice)
+    .update(dados)
+    .then();
   }
-
 }

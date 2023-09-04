@@ -8,38 +8,35 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./categoria-form.component.scss']
 })
 export class CategoriaFormComponent {
-  public indice:string = '';
-  public descricao:string = '';
+
+  public indice:string    = '';
+  public descricao:string = "";
 
   constructor(
     public categoria_service:CategoriaService,
     public activated_route:ActivatedRoute
-  
-  ){
-    this.activated_route.params.subscribe((params:any)=>{
-      console.log(params.indice);
-      this.categoria_service.ref().child('/' + params.indice).on('value',(snapshot:any) =>{
-        let dado:any =(snapshot.val());
-        console.log(dado);
-        this.indice = params.indice;
+  ) {
+    this.activated_route.params.subscribe( (params:any)=> {
+      //Caso seja um registro novo interromper a busca de dados 
+      if(params.indice == undefined) return;
+
+      this.categoria_service.ref().child('/' + params.indice).on('value', (snapshot:any) => {
+        let dado:any   = snapshot.val();
+        this.indice    = params.indice;
         this.descricao = dado.descricao;
-      })
-    }
-    
-      
-    );
+      });
+    });
   }
 
-  salvar(){
+  salvar() {
     let dados = {
       descricao:this.descricao
     };
 
-    if(this.indice ==  ''){
-      this.categoria_service.salvar(dados)
+    if (this.indice == ''){    
+      this.categoria_service.salvar(dados);
     }else{
       this.categoria_service.editar(this.indice,dados);
     }
   }
-
 }

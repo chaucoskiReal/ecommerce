@@ -7,20 +7,17 @@ import { Router } from '@angular/router';
   templateUrl: './categoria-listar.component.html',
   styleUrls: ['./categoria-listar.component.scss']
 })
-export class CategoriaListarComponent implements OnInit  {
+export class CategoriaListarComponent implements OnInit{
   public dados:Array<any> = [];
 
   constructor(
-    public categoria_service:CategoriaService,
-    public router:Router
-  ){} 
+    public categoria_service: CategoriaService,
+    public router: Router
+  ) {}
 
   ngOnInit(): void {
     this.categoria_service.listar()
-    .on('value',(snapshot:any) => {
-      console.log('#### ALTEROU O PRODUTO ....');
-      this.dados = Object.values( snapshot.val() );
-
+    .on('value', (snapshot:any)=>{
       // Limpa variavel local com os dados
       this.dados.splice(0,this.dados.length);
 
@@ -50,8 +47,7 @@ export class CategoriaListarComponent implements OnInit  {
     this.categoria_service.excluir(key);
   }
 
-  editar(key:string){
-    this.router.navigateByUrl('/categoria/form/' + key);
+  editar(key:string) {
+    this.router.navigate(['/categoria/form/' + key]);
   }
-
 }
