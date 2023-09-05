@@ -31,12 +31,16 @@ export class FormaPagamentoFormComponent {
   salvar() {
     let dados = {
       descricao:this.descricao
+
     }
 
     if(this.indice == '') {
       this.forma_pagamento_service.salvar(dados);
     } else {
       this.forma_pagamento_service.editar(this.indice,dados);
+    }if (dados.descricao ==''){
+      document.querySelector('#descricao')?.classList.add('has-error');
+      return;
     }
   }
 

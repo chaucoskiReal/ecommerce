@@ -1,33 +1,21 @@
-import { Injectable } from '@angular/core';
-import { FirebaseService } from '../firebase.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class FormaPagamentoService {
+import { FormaPagamentoListarComponent } from './forma-pagamento-listar.component';
 
-  constructor(
-    public firebase_service: FirebaseService
-  ) { }
+describe('FormaPagamentoListarComponent', () => {
+  let component: FormaPagamentoListarComponent;
+  let fixture: ComponentFixture<FormaPagamentoListarComponent>;
 
-  ref() {
-    return this.firebase_service.ref().child('/forma-pagamento');
-  }
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [FormaPagamentoListarComponent]
+    });
+    fixture = TestBed.createComponent(FormaPagamentoListarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-  salvar(dados:any) {
-    this.ref().push(dados).then();
-  }
-
-  listar() {
-    return this.ref();
-  }
-
-  excluir(indice:string) {
-    this.ref().child('/' + indice).remove().then();
-  }
-
-  editar(indice:string,dados:any) {
-    this.ref().child('/'+indice).update(dados).then();
-  }
-
-}
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
